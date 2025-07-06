@@ -54,12 +54,14 @@ npm start
 📮 API Endpoints
 
 🔑 Auth
+```
 POST /api/v1/auth/register → Register user
 
 POST /api/v1/auth/login → Login user (returns token)
-
+```
 
 📄 Jobs (Protected)
+````
 Include Authorization: Bearer <token> in headers.
 
 GET /api/v1/jobs → Get all jobs
@@ -71,9 +73,10 @@ POST /api/v1/jobs → Create new job
 PATCH /api/v1/jobs/:id → Update job
 
 DELETE /api/v1/jobs/:id → Delete job
-
+```
 
 🛡 Security Middleware
+
 helmet - Sets secure HTTP headers
 
 xss-clean - Cleans user input from malicious scripts
@@ -82,11 +85,13 @@ express-rate-limit - Limits repeated requests
 
 express-mongo-sanitize - Prevents NoSQL injection
 
+
 🐳 Deployment
 Deployed on Render :
 ```
 https://jobs-api-s96n.onrender.com
 ```
+
 🙋‍♂️ Author
 Abdessalem Kessouri
 Project built during learning with John Smilga’s Node.js course on freeCodeCamp.
