@@ -1,69 +1,95 @@
-#### Setup
+# 🧾 Jobs API
+
+A RESTful API built with Node.js, Express, and MongoDB that allows users to register, log in, and manage job applications (CRUD functionality).
+
+## 🚀 Features
+
+- ✅ User Authentication (Register & Login)
+- 🔐 Protected Routes with JWT
+- 📦 CRUD operations for Job listings
+- 🧰 Error handling & custom middleware
+- 🔒 Secured with Helmet, XSS-clean, Rate Limiting, and Mongo Sanitize
+- ☁️ MongoDB Atlas for cloud database
+
+---
+
+## 📁 Technologies Used
+
+- Node.js
+- Express.js
+- MongoDB & Mongoose
+- JWT (JSON Web Tokens)
+- dotenv
+- bcrypt
+- express-rate-limit
+- helmet
+- xss-clean
+- express-mongo-sanitize
+
+---
+
+## 📦 Installation
 
 ```bash
-npm install && npm start
+git clone https://github.com/yourusername/jobs-api.git
+cd jobs-api
+npm install
 ```
 
-#### Database Connection
-
-1. Import connect.js
-2. Invoke in start()
-3. Setup .env in the root
-4. Add MONGO_URI with correct value
-
-#### Routers
-
-- auth.js
-- jobs.js
-
-#### User Model
-
-Email Validation Regex
-
-```regex
-/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+⚙️ Environment Variables
+Create a .env file in the root and add the following:
+```
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_jwt_secret
+JWT_LIFETIME=1d
+PORT=5000
 ```
 
-#### Register User
+🧪 Run Locally
 
-- Validate - name, email, password - with Mongoose
-- Hash Password (with bcryptjs)
-- Save User
-- Generate Token
-- Send Response with Token
-
-#### Login User
-
-- Validate - email, password - in controller
-- If email or password is missing, throw BadRequestError
-- Find User
-- Compare Passwords
-- If no user or password does not match, throw UnauthenticatedError
-- If correct, generate Token
-- Send Response with Token
-
-#### Mongoose Errors
-
-- Validation Errors
-- Duplicate (Email)
-- Cast Error
-
-#### Security
-
-- helmet
-- cors
-- xss-clean
-- express-rate-limit
-
-Swagger UI
-
-```yaml
-/jobs/{id}:
-  parameters:
-    - in: path
-      name: id
-      schema:
-        type: string
-      required: true
-      description: the job id
 ```
+npm start
+```
+
+📮 API Endpoints
+
+🔑 Auth
+POST /api/v1/auth/register → Register user
+
+POST /api/v1/auth/login → Login user (returns token)
+
+
+📄 Jobs (Protected)
+Include Authorization: Bearer <token> in headers.
+
+GET /api/v1/jobs → Get all jobs
+
+GET /api/v1/jobs/:id → Get single job
+
+POST /api/v1/jobs → Create new job
+
+PATCH /api/v1/jobs/:id → Update job
+
+DELETE /api/v1/jobs/:id → Delete job
+
+
+🛡 Security Middleware
+helmet - Sets secure HTTP headers
+
+xss-clean - Cleans user input from malicious scripts
+
+express-rate-limit - Limits repeated requests
+
+express-mongo-sanitize - Prevents NoSQL injection
+
+🐳 Deployment
+Deployed on Render :
+```
+https://jobs-api-s96n.onrender.com
+```
+🙋‍♂️ Author
+Abdessalem Kessouri
+Project built during learning with John Smilga’s Node.js course on freeCodeCamp.
+
+
+
