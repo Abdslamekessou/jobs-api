@@ -76,7 +76,7 @@ DELETE /api/v1/jobs/:id → Delete job
 ```
 
 🛡 Security Middleware
-
+```
 helmet - Sets secure HTTP headers
 
 xss-clean - Cleans user input from malicious scripts
@@ -84,7 +84,7 @@ xss-clean - Cleans user input from malicious scripts
 express-rate-limit - Limits repeated requests
 
 express-mongo-sanitize - Prevents NoSQL injection
-
+```
 
 🐳 Deployment
 Deployed on Render :
