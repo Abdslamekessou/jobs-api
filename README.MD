@@ -52,6 +52,7 @@ npm start
 
 📮 API Endpoints
 
+
 🔑 Auth
 
 POST /api/v1/auth/register  →  Register user
@@ -59,7 +60,9 @@ POST /api/v1/auth/register  →  Register user
 POST /api/v1/auth/login  →  Login user (returns token)
 
 
+
 📄 Jobs (Protected)
+
 
 Include Authorization: Bearer <token> in headers.
 
@@ -74,7 +77,9 @@ PATCH /api/v1/jobs/:id  →  Update job
 DELETE /api/v1/jobs/:id  →  Delete job
 
 
+
 🛡 Security Middleware
+
 
 helmet - Sets secure HTTP headers
 
@@ -83,6 +88,8 @@ xss-clean - Cleans user input from malicious scripts
 express-rate-limit - Limits repeated requests
 
 express-mongo-sanitize - Prevents NoSQL injection
+
+
 
 
 🐳 Deployment
