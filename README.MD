@@ -52,6 +52,8 @@ npm start
 
 📮 API Endpoints
 
+---
+
 
 🔑 Auth
 
@@ -59,7 +61,7 @@ POST /api/v1/auth/register  →  Register user
 
 POST /api/v1/auth/login  →  Login user (returns token)
 
-
+---
 
 📄 Jobs (Protected)
 
@@ -76,7 +78,7 @@ PATCH /api/v1/jobs/:id  →  Update job
 
 DELETE /api/v1/jobs/:id  →  Delete job
 
-
+---
 
 🛡 Security Middleware
 
@@ -90,7 +92,7 @@ express-rate-limit - Limits repeated requests
 express-mongo-sanitize - Prevents NoSQL injection
 
 
-
+---
 
 🐳 Deployment
 Deployed on Render :
